@@ -3,7 +3,7 @@
 - Inicializar dados do cliente - ok
 - Menu de opções - ok
 - Visualização do saldo - ok
-- Enviar valor - ok
+- Enviar valGor - ok
 - Receber  - ok
 
  */
@@ -60,7 +60,7 @@ public class Desafio {
                     break;
                 }
                 case 3: {
-                    System.out.println("Digite o valor a ser recebido: R$");
+                    System.out.println("Digite o valor a ser recebido: ");
                     valor = entradaDeDados.nextDouble();
                     if (valor <= 0) {
                         System.out.println("Digite um valor positivo.");
