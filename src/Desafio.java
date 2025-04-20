@@ -32,7 +32,6 @@ public class Desafio {
                 2 - Transferir valor
                 3 - Receber valor 
                 4 - Sair
-
                 """;
 
         while(opcao !=4){
@@ -47,11 +46,14 @@ public class Desafio {
                 case 2:{
                     System.out.println("Digite o valor a ser transferido: ");
                     valor = entradaDeDados.nextDouble();
-
+                    if (valor <= 0) {
+                        System.out.println("Digite um valor positivo.");
+                        break;
+                    }
                     if(valor > saldo){
                         System.out.println("Valor indisponível para transferência.");
                         break;
-                    };
+                    }
 
                     saldo -= valor;
                     System.out.println(String.format("R$%.2f transferido com sucesso. Seu saldo atual é: R$%.2f", valor, saldo));
@@ -60,12 +62,17 @@ public class Desafio {
                 case 3: {
                     System.out.println("Digite o valor a ser recebido: R$");
                     valor = entradaDeDados.nextDouble();
+                    if (valor <= 0) {
+                        System.out.println("Digite um valor positivo.");
+                        break;
+                    }
                     saldo += valor;
                     System.out.println(String.format("R$%.2f recebido com sucesso. Seu saldo atual é: R$%.2f", valor, saldo));
                     break;
                 }
                 case 4:{
-                    System.out.println("Volte sempre!");
+                    System.out.println(String.format("O seu saldo final é R$%.2f. Volte sempre!", saldo));
+                    break;
                 }
                 default:{
                     System.out.println("Opção inválida. Selecione uma opção válida");
