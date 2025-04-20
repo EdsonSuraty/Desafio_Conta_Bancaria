@@ -1,13 +1,3 @@
-/*
-
-- Inicializar dados do cliente - ok
-- Menu de opções - ok
-- Visualização do saldo - ok
-- Enviar valGor - ok
-- Receber  - ok
-
- */
-
 import java.util.Scanner;
 
 public class Desafio {
