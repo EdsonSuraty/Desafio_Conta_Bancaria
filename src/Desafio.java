@@ -2,9 +2,9 @@
 
 - Inicializar dados do cliente - ok
 - Menu de opções - ok
-- Visualização do saldo
-- Enviar valor
-- Receber valor
+- Visualização do saldo - ok
+- Enviar valor - ok
+- Receber  - ok
 
  */
 
@@ -18,11 +18,12 @@ public class Desafio {
         String tipoDeConta = "Corrente";
         double saldo = 2000.00;
         int opcao = 0;
+        double valor = 0;
 
         System.out.println("**************************");
         System.out.println(String.format("Nome: %s", nome));
         System.out.println(String.format("Tipo da Conta: %s", tipoDeConta));
-        System.out.println(String.format("Saldo da conta: %.2f", saldo));
+        System.out.println(String.format("Saldo da conta: R$%.2f", saldo));
         System.out.println("**************************");
 
         String menu = """
@@ -40,12 +41,12 @@ public class Desafio {
 
             switch (opcao){
                 case 1:{
-                    System.out.println(String.format("Seu saldo atual é: %.2f", saldo));
+                    System.out.println(String.format("Seu saldo atual é: R$%.2f", saldo));
                     break;
                 }
                 case 2:{
                     System.out.println("Digite o valor a ser transferido: ");
-                    double valor = entradaDeDados.nextDouble();
+                    valor = entradaDeDados.nextDouble();
 
                     if(valor > saldo){
                         System.out.println("Valor indisponível para transferência.");
@@ -53,8 +54,21 @@ public class Desafio {
                     };
 
                     saldo -= valor;
-                    System.out.println(String.format("%.2f transferido com sucesso. Seu saldo atual é: %.2f", valor, saldo));
+                    System.out.println(String.format("R$%.2f transferido com sucesso. Seu saldo atual é: R$%.2f", valor, saldo));
                     break;
+                }
+                case 3: {
+                    System.out.println("Digite o valor a ser recebido: R$");
+                    valor = entradaDeDados.nextDouble();
+                    saldo += valor;
+                    System.out.println(String.format("R$%.2f recebido com sucesso. Seu saldo atual é: R$%.2f", valor, saldo));
+                    break;
+                }
+                case 4:{
+                    System.out.println("Volte sempre!");
+                }
+                default:{
+                    System.out.println("Opção inválida. Selecione uma opção válida");
                 }
             }
         }
